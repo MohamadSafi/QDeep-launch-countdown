@@ -4,9 +4,10 @@ import { Footer } from "@/components/Footer";
 import ParticleBackground from "@/components/ParticleBackground";
 import { TimerContainer } from "@/components/TimerContainer";
 import Image from "next/image";
+import { EmailInput } from "@/components/EmailInput";
 
 export default function Home() {
-  const [newTime, setNewTime] = useState<number>(0);
+  const [Email, setEmail] = useState<number>(0);
   const [days, setDays] = useState<number>(0);
   const [hours, setHours] = useState<number>(0);
   const [minutes, setMinutes] = useState<number>(0);
@@ -40,6 +41,13 @@ export default function Home() {
       clearInterval(updateTime);
     };
   }, []);
+
+  const handleClick = () => {};
+
+  const handleChange = (e: any) => {
+    let Email = e.target.value;
+    setEmail(Email);
+  };
   return (
     <main className="relative overflow-hidden">
       <ParticleBackground />
@@ -58,8 +66,8 @@ export default function Home() {
             />
           </div>
         </div>
-        <p className="text-center text-[#9F2323] text-xl font-bold">Text</p>
-        <p className="text-center">Text</p>
+        <p className="text-center text-[#9F2323] text-xl font-bold">QDeep</p>
+        <p className="text-center">We are lunching soon</p>
         <div className="flex justify-center">
           <TimerContainer
             days={days}
@@ -67,6 +75,12 @@ export default function Home() {
             minutes={minutes}
             seconds={seconds}
           ></TimerContainer>
+        </div>
+        <div className="w-screen text-center mt-6">
+          <p className="text-center">
+            Enter your Email to subscribe our newsletter
+          </p>
+          <EmailInput handleClick={handleClick} handleChange={handleChange} />
         </div>
       </div>
     </main>
