@@ -51,29 +51,29 @@ export default function Home() {
     }
 
     // Use your chosen library to write the email to a Google Sheet
-    try {
-      // Import and initialize the library here
-      const { GoogleSpreadsheet } = require("google-spreadsheet");
-      const doc = new GoogleSpreadsheet("YOUR_SPREADSHEET_ID");
+    // try {
+    //   // Import and initialize the library here
+    //   const { GoogleSpreadsheet } = require("google-spreadsheet");
+    //   const doc = new GoogleSpreadsheet("YOUR_SPREADSHEET_ID");
 
-      // Authenticate with Google Sheets (You need to set up credentials)
-      await doc.useServiceAccountAuth({
-        client_email: "YOUR_CLIENT_EMAIL",
-        private_key: "YOUR_PRIVATE_KEY",
-      });
+    //   // Authenticate with Google Sheets (You need to set up credentials)
+    //   await doc.useServiceAccountAuth({
+    //     client_email: "YOUR_CLIENT_EMAIL",
+    //     private_key: "YOUR_PRIVATE_KEY",
+    //   });
 
-      // Load the sheet
-      await doc.loadInfo();
-      const sheet = doc.sheetsByIndex[0]; // Assuming you want to write to the first sheet
+    //   // Load the sheet
+    //   await doc.loadInfo();
+    //   const sheet = doc.sheetsByIndex[0]; // Assuming you want to write to the first sheet
 
-      // Add a new row with the email address
-      await sheet.addRow({ Email: email });
+    //   // Add a new row with the email address
+    //   await sheet.addRow({ Email: email });
 
-      alert("Thank you for subscribing!");
-    } catch (error) {
-      console.error("Error writing to Google Sheet:", error);
-      alert("An error occurred while subscribing. Please try again later.");
-    }
+    //   alert("Thank you for subscribing!");
+    // } catch (error) {
+    //   console.error("Error writing to Google Sheet:", error);
+    //   alert("An error occurred while subscribing. Please try again later.");
+    // }
   };
 
   const handleChange = (e: any) => {
