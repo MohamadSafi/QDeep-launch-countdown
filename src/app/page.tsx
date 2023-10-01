@@ -87,14 +87,14 @@ export default function Home() {
         <Footer />
       </div>
       <div className="flex flex-col align-middle mt-8">
-        <div className="flex justify-center w-40 xl:w-60 self-center">
+        <div className="flex justify-center w-40 self-center">
           <div className="w-7/12 self-center">
             <Image
               src={"/assets/QDeepLogo.svg"}
               alt="QDeep Logo"
               layout="responsive"
-              width={100}
-              height={100}
+              width={80}
+              height={80}
             />
           </div>
         </div>
