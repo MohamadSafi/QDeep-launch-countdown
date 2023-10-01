@@ -9,7 +9,7 @@ interface numProp {
 export const NumberBox = ({ num, unit, flip }: numProp) => {
   return (
     <div className="flex flex-col items-center mt-4 px-2">
-      <div className=" relative bg-transparent flex flex-col items-center justify-center rounded-lg w-24 h-24 lg:w-24 lg:h-24 xl:w-32 xl:h-32 text-2xl md:text-4xl mt-4 ">
+      <div className=" relative bg-transparent flex flex-col items-center justify-center rounded-lg w-24 h-24 lg:w-24 lg:h-24 xl:w-32 xl:h-32 text-2xl md:text-4xl ">
         <div className="rounded-t-lg rounded-b-lg bg-[#343650] w-full h-full"></div>
 
         <div className="text-5xl absolute text-[#9F2323] z-10 font-bold font-redhat md:text-7xl font-mono ">
