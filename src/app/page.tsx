@@ -81,9 +81,9 @@ export default function Home() {
     setEmail(Email);
   };
   return (
-    <main className="relative overflow-hidden">
+    <main className="overflow-hidden">
       <ParticleBackground />
-      <div className="absolute">
+      <div className="hidden md:absolute md:flex lg:absolute lg:flex xl:absolute xl:flex 2xl:flex 2xl:absolute ml-4">
         <Footer />
       </div>
       <div className="flex flex-col align-middle mt-8">
@@ -113,6 +113,9 @@ export default function Home() {
             Enter your Email to subscribe our newsletter
           </p>
           <EmailInput handleClick={handleClick} handleChange={handleChange} />
+        </div>
+        <div className="flex justify-center md:hidden lg:hidden xl:hidden 2xl:hidden">
+          <Footer />
         </div>
       </div>
     </main>

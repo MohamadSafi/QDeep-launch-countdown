@@ -3,15 +3,34 @@ import React from "react";
 export const Footer = () => {
   return (
     <div className="mx-auto w-full ">
-      <div className=" w-full flex mt-4 ml-4 space-x-6 justify-center items-center ">
+      <div className=" w-full flex mt-4 space-x-6 justify-center items-center ">
         <a href="https://facebook.com" target="_blank">
           <svg
             xmlns="http://www.w3.org/2000/svg"
-            viewBox="0 0 512 512"
-            className="h-7 w-7 md:h-10 md:w-10 hover:cursor-pointer"
-            fill="#9f2323"
+            x="0px"
+            y="0px"
+            width="45"
+            height="45"
+            viewBox="0,0,256,256"
           >
-            <path d="M504 256C504 119 393 8 256 8S8 119 8 256c0 123.78 90.69 226.38 209.25 245V327.69h-63V256h63v-54.64c0-62.15 37-96.48 93.67-96.48 27.14 0 55.52 4.84 55.52 4.84v61h-31.28c-30.8 0-40.41 19.12-40.41 38.73V256h68.78l-11 71.69h-57.78V501C413.31 482.38 504 379.78 504 256z" />
+            <g
+              fill="#9f2323"
+              fill-rule="nonzero"
+              stroke="none"
+              stroke-width="1"
+              stroke-linecap="butt"
+              stroke-linejoin="miter"
+              stroke-miterlimit="10"
+              stroke-dashoffset="0"
+              font-family="none"
+              font-weight="none"
+              font-size="none"
+              text-anchor="none"
+            >
+              <g transform="scale(5.12,5.12)">
+                <path d="M41,4h-32c-2.76,0 -5,2.24 -5,5v32c0,2.76 2.24,5 5,5h32c2.76,0 5,-2.24 5,-5v-32c0,-2.76 -2.24,-5 -5,-5zM37,19h-2c-2.14,0 -3,0.5 -3,2v3h5l-1,5h-4v15h-5v-15h-4v-5h4v-3c0,-4 2,-7 6,-7c2.9,0 4,1 4,1z"></path>
+              </g>
+            </g>
           </svg>
         </a>
         <a href="https://www.linkedin.com/" target="_blank">
@@ -31,7 +50,6 @@ export const Footer = () => {
               stroke-linecap="butt"
               stroke-linejoin="miter"
               stroke-miterlimit="10"
-              stroke-dasharray=""
               stroke-dashoffset="0"
               font-family="none"
               font-weight="none"
@@ -62,7 +80,6 @@ export const Footer = () => {
               stroke-linecap="butt"
               stroke-linejoin="miter"
               stroke-miterlimit="10"
-              stroke-dasharray=""
               stroke-dashoffset="0"
               font-family="none"
               font-weight="none"
