@@ -7,7 +7,7 @@ import Image from "next/image";
 import { EmailInput } from "@/components/EmailInput";
 
 export default function Home() {
-  const [Email, setEmail] = useState<number>(0);
+  const [email, setEmail] = useState<string>("");
   const [days, setDays] = useState<number>(0);
   const [hours, setHours] = useState<number>(0);
   const [minutes, setMinutes] = useState<number>(0);
@@ -42,7 +42,39 @@ export default function Home() {
     };
   }, []);
 
-  const handleClick = () => {};
+  const handleClick = async () => {
+    // Validate the email address using a simple regex pattern
+    const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    if (!emailPattern.test(email)) {
+      alert("Please enter a valid email address.");
+      return;
+    }
+
+    // Use your chosen library to write the email to a Google Sheet
+    try {
+      // Import and initialize the library here
+      const { GoogleSpreadsheet } = require("google-spreadsheet");
+      const doc = new GoogleSpreadsheet("YOUR_SPREADSHEET_ID");
+
+      // Authenticate with Google Sheets (You need to set up credentials)
+      await doc.useServiceAccountAuth({
+        client_email: "YOUR_CLIENT_EMAIL",
+        private_key: "YOUR_PRIVATE_KEY",
+      });
+
+      // Load the sheet
+      await doc.loadInfo();
+      const sheet = doc.sheetsByIndex[0]; // Assuming you want to write to the first sheet
+
+      // Add a new row with the email address
+      await sheet.addRow({ Email: email });
+
+      alert("Thank you for subscribing!");
+    } catch (error) {
+      console.error("Error writing to Google Sheet:", error);
+      alert("An error occurred while subscribing. Please try again later.");
+    }
+  };
 
   const handleChange = (e: any) => {
     let Email = e.target.value;
