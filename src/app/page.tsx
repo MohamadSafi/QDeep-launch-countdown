@@ -110,12 +110,12 @@ export default function Home() {
         </div>
         <div className="hidden sm:flex-row sm:flex md:flex-row md:flex lg:flex-row lg:flex xl:flex-row xl:flex justify-center gap-8">
           <div className="mx-4 ">
-            <p className="text-md md:text-lg lg:text-lg xl:text-lg 2xl:text-lg font-mono text-white w-96 ">
+            <p className="text-md md:text-lg lg:text-lg xl:text-lg 2xl:text-lg font-mono text-[#9F2323] w-96 font-bold">
               At QDeep, we are shaping computings future with quantum
               technology. Our innovative traffic optimization tool, powered by
               quantum computing, enhances traffic flow.
             </p>
-            <p className="text-md md:text-lg lg:text-lg xl:text-lg 2xl:text-lg font-mono text-white w-96 ">
+            <p className="text-md md:text-lg lg:text-lg xl:text-lg 2xl:text-lg font-mono text-[#9F2323] font-bold w-96 ">
               Stay tuned for updates as we redefine transportation efficiency.
             </p>
           </div>
