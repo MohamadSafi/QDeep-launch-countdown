@@ -9,6 +9,8 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "google-auth-library": "^8.9.0",
+    "google-spreadsheet": "^4.1.0",
     "next": "latest",
     "react": "latest",
     "react-dom": "latest",
@@ -25,5 +27,13 @@
     "postcss": "latest",
     "tailwindcss": "latest",
     "typescript": "latest"
+  },
+  "browser": {
+    "fs": false,
+    "os": false,
+    "path": false,
+    "child_process": false,
+    "net": false,
+    "tls": false
   }
 }
