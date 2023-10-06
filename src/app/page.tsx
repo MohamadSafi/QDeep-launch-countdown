@@ -13,29 +13,37 @@ export default function Home() {
   const [minutes, setMinutes] = useState<number>(0);
   const [seconds, setSeconds] = useState<number>(0);
 
-  const timeToDays = 40 * 60 * 60 * 24 * 1000;
-
-  let countDownDate = new Date().getTime() + timeToDays;
-
   useEffect(() => {
-    var updateTime = setInterval(() => {
-      var now = new Date().getTime();
+    // Set the target date to December 1, 2023
+    const targetDate = new Date("2023-12-01T00:00:00").getTime();
 
-      var difference = countDownDate - now;
-      var newDays = Math.floor(difference / (1000 * 60 * 60 * 24));
-      var newHours = Math.floor(
-        (difference % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60)
-      );
-      var newMinutes = Math.floor(
-        (difference % (1000 * 60 * 60)) / (1000 * 60)
-      );
-      var newSeconds = Math.floor((difference % (1000 * 60)) / 1000);
+    const updateTime = setInterval(() => {
+      const now = new Date().getTime();
+      const difference = targetDate - now;
 
-      setDays(newDays);
-      setHours(newHours);
-      setMinutes(newMinutes);
-      setSeconds(newSeconds);
-    });
+      if (difference <= 0) {
+        // Handle the case when the countdown is over
+        clearInterval(updateTime);
+        setDays(0);
+        setHours(0);
+        setMinutes(0);
+        setSeconds(0);
+      } else {
+        const newDays = Math.floor(difference / (1000 * 60 * 60 * 24));
+        const newHours = Math.floor(
+          (difference % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60)
+        );
+        const newMinutes = Math.floor(
+          (difference % (1000 * 60 * 60)) / (1000 * 60)
+        );
+        const newSeconds = Math.floor((difference % (1000 * 60)) / 1000);
+
+        setDays(newDays);
+        setHours(newHours);
+        setMinutes(newMinutes);
+        setSeconds(newSeconds);
+      }
+    }, 1000);
 
     return () => {
       clearInterval(updateTime);
@@ -89,7 +97,7 @@ export default function Home() {
       <div className="flex flex-col align-middle mt-12">
         <div className="flex flex-col sm:hidden md:hidden lg:hidden xl:hidden justify-center gap-8">
           <div className="flex justify-center w-40 xl:w-52 self-center">
-            <div className="w-7/12 self-center">
+            <div className="w-7/12 self-center drop-shadow-2xl shadow-black">
               <Image
                 src={"/assets/QDeepLogo.svg"}
                 alt="QDeep Logo"
@@ -109,13 +117,13 @@ export default function Home() {
           </div>
         </div>
         <div className="hidden sm:flex-row sm:flex md:flex-row md:flex lg:flex-row lg:flex xl:flex-row xl:flex justify-center gap-8">
-          <div className="mx-4 ">
-            <p className="text-md md:text-lg lg:text-lg xl:text-lg 2xl:text-lg font-mono text-[#9F2323] w-96 font-[1000]">
+          <div className="mx-4 stroke-black stroke-2 drop-shadow-lg shadow-black">
+            <p className="text-md md:text-lg lg:text-lg xl:text-lg 2xl:text-lg font-mono text-red-600 w-96 font-[1000] stroke-black stroke-2 drop-shadow-lg shadow-black">
               At QDeep, we are shaping computings future with quantum
               technology. Our innovative traffic optimization tool, powered by
               quantum computing, enhances traffic flow.
             </p>
-            <p className="text-md md:text-lg lg:text-lg xl:text-lg 2xl:text-lg font-mono text-[#9F2323] w-96 font-[1000]">
+            <p className="text-md md:text-lg lg:text-lg xl:text-lg 2xl:text-lg font-mono text-red-600 w-96 font-[1000] stroke-black stroke-2">
               Stay tuned for updates as we redefine transportation efficiency.
             </p>
           </div>
@@ -140,7 +148,7 @@ export default function Home() {
           ></TimerContainer>
         </div>
         <div className="w-screen text-center mt-6">
-          <p className="text-center font-mono text-xl font-[1000] text-red-600">
+          <p className="text-center font-mono text-xl font-[1000] text-red-600 stroke-black	">
             Enter your Email to subscribe our newsletter
           </p>
           <EmailInput handleClick={handleClick} handleChange={handleChange} />
