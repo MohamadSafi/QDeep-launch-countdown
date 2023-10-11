@@ -7,6 +7,7 @@ import Image from "next/image";
 import { EmailInput } from "@/components/EmailInput";
 import { GoogleSpreadsheet } from "google-spreadsheet";
 import { JWT } from "google-auth-library";
+import { NextSeo } from "next-seo";
 
 export default function Home() {
   const [email, setEmail] = useState<string>("");
@@ -96,6 +97,40 @@ export default function Home() {
   };
   return (
     <main className="overflow-hidden">
+      <NextSeo
+        title="Using More of Config"
+        description="This example uses more of the available config options."
+        canonical="https://www.canonical.ie/"
+        openGraph={{
+          url: "https://www.url.ie/a",
+          title: "Open Graph Title",
+          description: "Open Graph Description",
+          images: [
+            {
+              url: "https://www.example.ie/og-image-01.jpg",
+              width: 800,
+              height: 600,
+              alt: "Og Image Alt",
+              type: "image/jpeg",
+            },
+            {
+              url: "https://www.example.ie/og-image-02.jpg",
+              width: 900,
+              height: 800,
+              alt: "Og Image Alt Second",
+              type: "image/jpeg",
+            },
+            { url: "https://www.example.ie/og-image-03.jpg" },
+            { url: "https://www.example.ie/og-image-04.jpg" },
+          ],
+          siteName: "SiteName",
+        }}
+        twitter={{
+          handle: "@handle",
+          site: "@site",
+          cardType: "summary_large_image",
+        }}
+      />{" "}
       <ParticleBackground />
       <div className="hidden md:absolute md:flex lg:absolute lg:flex xl:absolute xl:flex 2xl:flex 2xl:absolute ml-4">
         <Footer />

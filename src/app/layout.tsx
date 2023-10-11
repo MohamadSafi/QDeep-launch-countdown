@@ -6,7 +6,18 @@ const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
   title: "QDeep",
-  description: "description",
+  description:
+    "QDeep is all about Quantum Technology and Quantum Computing to achive Traffic Optimization by Quantum Algorithms",
+  applicationName: "QDeep",
+  keywords: [
+    "Quantum Technology",
+    "Quantum Computing",
+    "Quantum Algorithms",
+    "Quantum Information Processing",
+  ],
+  authors: [{ name: "Hadi Salloum" }, { name: "Mohammad Safi" }],
+  creator: "Mohammad Safi",
+  metadataBase: new URL("https://qdeep.net"),
 };
 
 export default function RootLayout({
